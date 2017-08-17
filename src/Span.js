@@ -25,20 +25,6 @@ export default class Span {
   // Getters & setters
   /////////////////////////////////////////////
 
-  get min() {
-    return this.min;
-  }
-  get max() {
-    return this.max;
-  }
-
-  set min(num) {
-    this.min = num;
-  }
-  set max(num) {
-    this.max = num;
-  }
-
   get middle() {
     return this.lerp(0.5);
   }
