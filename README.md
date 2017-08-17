@@ -1,2 +1,2 @@
-# Varyd JS utils
+# Varyd utils
 JavaScript utility library
