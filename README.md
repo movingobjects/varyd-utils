@@ -25,10 +25,3 @@ import { Range } from 'varyd-utils';
 
 const r = new Range(0, 10);
 ```
-
-```js
-import { getLatin } from 'varyd-utils/text';
-
-console.log(getLatin(25, true));
-
-```
