@@ -1,6 +1,6 @@
 
-import Maths from "varyd/Maths";
-import Random from "varyd/Random";
+import maths from "varyd/maths";
+import random from "varyd/random";
 import Range from "varyd/Range";
 
 export default class Rect {
@@ -81,10 +81,10 @@ export default class Rect {
   }
 
   get randomX() {
-    return Random.num(this.left, this.right);
+    return random.num(this.left, this.right);
   }
   get randomY() {
-    return Random.num(this.top, this.bottom);
+    return random.num(this.top, this.bottom);
   }
   get randomPt() {
     return {
@@ -126,23 +126,23 @@ export default class Rect {
 
   clampXY(x, y) {
     return {
-      x: Maths.clamp(x, this.left, this.right),
-      y: Maths.clamp(y, this.top, this.bottom)
+      x: maths.clamp(x, this.left, this.right),
+      y: maths.clamp(y, this.top, this.bottom)
     }
   }
 
   lerpX(val) {
-    return Maths.lerp(this.left, this.right, val);
+    return maths.lerp(this.left, this.right, val);
   }
   lerpY(val) {
-    return Maths.lerp(this.top, this.bottom, val);
+    return maths.lerp(this.top, this.bottom, val);
   }
 
   normX(val) {
-    return Maths.norm(val, this.left, this.right);
+    return maths.norm(val, this.left, this.right);
   }
   normY(val) {
-    return Maths.norm(val, this.top, this.bottom);
+    return maths.norm(val, this.top, this.bottom);
   }
 
 }

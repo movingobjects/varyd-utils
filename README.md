@@ -8,8 +8,8 @@ Load entire library.
 ```js
 import * as varyd from 'varyd';
 
-varyd.Maths.lerp(5, 10, 0.25);
-varyd.Random.boolean(0.25);
+varyd.maths.lerp(5, 10, 0.25);
+varyd.random.boolean(0.25);
 ```
 
 Load individual pieces.
@@ -21,7 +21,7 @@ const r = new Range(0, 10);
 ```
 
 ```js
-import { getLatin } from 'varyd/Text';
+import { getLatin } from 'varyd/text';
 
 console.log(getLatin(25, true));
 

@@ -38,7 +38,7 @@ export default class Vec {
   /////////////////////////////////////////////
 
   static random(minX, maxX, minY, maxY) {
-    return new Vec(Random.num(minX, maxX), Random.num(minY, maxY));
+    return new Vec(random.num(minX, maxX), random.num(minY, maxY));
   }
 
   static fromPts(x1, y1, x2, y2) {
@@ -46,16 +46,16 @@ export default class Vec {
   }
 
   distTo(pt) {
-    return Geom.dist(this.x, this.y, pt.x, pt.y);
+    return geom.dist(this.x, this.y, pt.x, pt.y);
   }
   distToXY(x, y) {
-    return Geom.dist(this.x, this.y, x, y);
+    return geom.dist(this.x, this.y, x, y);
   }
   distSqTo(pt) {
-    return Geom.distSq(this.x, this.y, pt.x, pt.y);
+    return geom.distSq(this.x, this.y, pt.x, pt.y);
   }
   distSqToXY(x, y) {
-    return Geom.distSq(this.x, this.y, x, y);
+    return geom.distSq(this.x, this.y, x, y);
   }
 
   add(v) {

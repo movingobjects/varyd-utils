@@ -1,5 +1,5 @@
 
-import Maths from "varyd/Maths";
+import maths from "varyd/maths";
 
 // Pts
 /////////////////////////////////////////////
@@ -35,7 +35,7 @@ export function rotatePt(pt, rads, origin) {
 
 export function ptAroundCircle(rad, perc, origin = null) {
 
-  let angle = (perc * Maths.TAO) - (Math.PI / 2),
+  let angle = (perc * maths.TAO) - (Math.PI / 2),
       x     = (origin ? origin.x : 0) + (rad * Math.cos(angle)),
       y     = (origin ? origin.y : 0) + (rad * Math.sin(angle));
 
@@ -59,8 +59,8 @@ export function distSqXY(x1, y1, x2, y2) {
 
 export function lerpPt(p1, p2, val = 0.5) {
   return {
-    x: Maths.lerp(p1.x, p2.x, val),
-    y: Maths.lerp(p1.y, p2.y, val)
+    x: maths.lerp(p1.x, p2.x, val),
+    y: maths.lerp(p1.y, p2.y, val)
   };
 }
 
@@ -69,10 +69,10 @@ export function lerpPt(p1, p2, val = 0.5) {
 /////////////////////////////////////////////
 
 export function degToRad(degs) {
-  return degs * (Maths.TAO / 360);
+  return degs * (maths.TAO / 360);
 }
 export function radToDeg(rads) {
-  return rads * (360 / Maths.TAO);
+  return rads * (360 / maths.TAO);
 }
 
 export function getRadFromPts(fromPt, toPt) {
@@ -105,10 +105,10 @@ export function getRadFromXY(fromX, fromY, toX, toY) {
 export function lerpRect(rectA, rectB, val = 0.5) {
 
   return {
-    x:      Maths.lerp(rectA.x,      rectB.x,      val),
-    y:      Maths.lerp(rectA.y,      rectB.y,      val),
-    width:  Maths.lerp(rectA.width,  rectB.width,  val),
-    height: Maths.lerp(rectA.height, rectB.height, val)
+    x:      maths.lerp(rectA.x,      rectB.x,      val),
+    y:      maths.lerp(rectA.y,      rectB.y,      val),
+    width:  maths.lerp(rectA.width,  rectB.width,  val),
+    height: maths.lerp(rectA.height, rectB.height, val)
   };
 
 }

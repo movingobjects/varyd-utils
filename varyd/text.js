@@ -36,12 +36,12 @@ export function getLatin(wordCount = 1, punctuate = false) {
   }
 
   let isNewSentence = true,
-      words         = Random.items(sourceWords, wordCount),
+      words         = random.items(sourceWords, wordCount),
       result        = "";
 
   for (let i = 0; i < words.length; i++) {
 
-    let isLastWord  = (i === Arrays.lastIndex(words)),
+    let isLastWord  = (i === arrays.lastIndex(words)),
         nextWord    = words[i];
 
     if (isNewSentence) {
@@ -58,11 +58,11 @@ export function getLatin(wordCount = 1, punctuate = false) {
       if (isLastWord) {
         result += ".";
 
-      } else if (Random.boolean(CHANCE_PERIOD)) {
+      } else if (random.boolean(CHANCE_PERIOD)) {
         result += ". ";
         isNewSentence = true;
 
-      } else if (Random.boolean(CHANCE_COMMA)) {
+      } else if (random.boolean(CHANCE_COMMA)) {
         result += ", ";
 
       } else {

@@ -1,13 +1,13 @@
 
-import Maths from "varyd/Maths";
-import Random from "varyd/Random";
+import maths from "varyd/maths";
+import random from "varyd/random";
 
 
 export function shuffled(a) {
-	return Random.shuffle(a);
+	return random.shuffle(a);
 }
 export function randomItem(a) {
-	return Random.item(a);
+	return random.item(a);
 }
 
 export function removeDuplicates(a) {
@@ -21,16 +21,16 @@ export function addOnce(a, item) {
 }
 
 export function next(i, a, clamp = false) {
-	return Maths.nextWithin(i, 0, a.length - 1, clamp);
+	return maths.nextWithin(i, 0, a.length - 1, clamp);
 }
 export function prev(i, a, clamp = false) {
-	return Maths.prevWithin(i, 0, a.length - 1, clamp);
+	return maths.prevWithin(i, 0, a.length - 1, clamp);
 }
 
 export function nextItem(item, a, clamp = false) {
 
 	let i		= a.indexOf(item),
-		iNext	= Arrays.next(i, a, clamp);
+		iNext	= arrays.next(i, a, clamp);
 
 	return a[iNext];
 
@@ -38,7 +38,7 @@ export function nextItem(item, a, clamp = false) {
 export function prevItem(item, a, clamp = false) {
 
 	let i		= a.indexOf(item),
-		iPrev	= Arrays.prev(i, a, clamp);
+		iPrev	= arrays.prev(i, a, clamp);
 
 	return a[iPrev];
 
@@ -66,7 +66,7 @@ export function contains(a, item) {
 }
 
 export function wrapIndex(i, a) {
-	return Maths.wrap(i, 0, a.length - 1);
+	return maths.wrap(i, 0, a.length - 1);
 }
 export function wrapItem(i, a) {
 	return a[wrapIndex(i, a)];

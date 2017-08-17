@@ -1,6 +1,6 @@
 
-import Maths from "varyd/Maths";
-import Random from "varyd/Random";
+import maths from "varyd/maths";
+import random from "varyd/random";
 
 export default class Range {
 
@@ -54,14 +54,14 @@ export default class Range {
   }
 
   get random() {
-    return Random.num(this.min, this.max);
+    return random.num(this.min, this.max);
   }
   get randomInt() {
-    return Random.integer(this.min, this.max);
+    return random.integer(this.min, this.max);
   }
 
   get isIntRange() {
-    return Maths.isInt(this.min) && Maths.isInt(this.max);
+    return maths.isInt(this.min) && maths.isInt(this.max);
   }
 
 
@@ -69,34 +69,34 @@ export default class Range {
   /////////////////////////////////////////////
 
   lerp(val, clamp = false) {
-    return Maths.lerp(this.min, this.max, val, clamp);
+    return maths.lerp(this.min, this.max, val, clamp);
   }
   norm(val, clamp = false) {
-    return Maths.norm(val, this.min, this.max, clamp);
+    return maths.norm(val, this.min, this.max, clamp);
   }
 
   mapFrom(val, fromMin, fromMax) {
-    return Maths.map(val, fromMin, fromMax, this.min, this.max);
+    return maths.map(val, fromMin, fromMax, this.min, this.max);
   }
   mapTo(val, toMin, toMax) {
-    return Maths.map(val, this.min, this.max, toMin, toMax);
+    return maths.map(val, this.min, this.max, toMin, toMax);
   }
 
   mapFromRange(val, fromRange, clamp = false) {
-    return Maths.map(val, fromRange.min, fromRange.max, this.min, this.max, clamp);
+    return maths.map(val, fromRange.min, fromRange.max, this.min, this.max, clamp);
   }
   mapToRange(val, toRange, clamp = false) {
-    return Maths.map(val, this.min, this.max, toRange.min, toRange.max, clamp);
+    return maths.map(val, this.min, this.max, toRange.min, toRange.max, clamp);
   }
 
   clamp(val) {
-    return Maths.clamp(val, this.min, this.max);
+    return maths.clamp(val, this.min, this.max);
   }
   wrap(val) {
-    if (Maths.isInt(val) && isIntRange) {
-      return Maths.wrap(val, this.min, this.max);
+    if (maths.isInt(val) && isIntRange) {
+      return maths.wrap(val, this.min, this.max);
     } else {
-      return Maths.wrapNum(val, this.min, this.max);
+      return maths.wrapNum(val, this.min, this.max);
     }
   }
 
@@ -111,8 +111,8 @@ export default class Range {
   }
 
   trim(trimMin, trimMax) {
-    this.min = Maths.clamp(this.min, trimMin, trimMax);
-    this.max = Maths.clamp(this.max, trimMin, trimMax);
+    this.min = maths.clamp(this.min, trimMin, trimMax);
+    this.max = maths.clamp(this.max, trimMin, trimMax);
   }
 
   toString() {
