@@ -12,7 +12,7 @@ $ npm install varyd-utils --save
 Load entire library.
 
 ```js
-import * as varyd from 'varyd';
+import * as varyd from 'varyd-utils';
 
 varyd.maths.lerp(5, 10, 0.25);
 varyd.random.boolean(0.25);
@@ -21,13 +21,13 @@ varyd.random.boolean(0.25);
 Load individual pieces.
 
 ```js
-import { Range } from 'varyd';
+import { Range } from 'varyd-utils';
 
 const r = new Range(0, 10);
 ```
 
 ```js
-import { getLatin } from 'varyd/text';
+import { getLatin } from 'varyd-utils/text';
 
 console.log(getLatin(25, true));
 
