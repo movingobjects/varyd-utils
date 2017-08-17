@@ -1,6 +1,12 @@
 # Varyd utils
 An ES6 JavaScript utility library.
 
+## Installation
+
+```shell
+$ npm install varyd-utils --save
+```
+
 ## Usage
 
 Load entire library.
