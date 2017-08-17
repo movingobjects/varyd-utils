@@ -69,9 +69,6 @@ export function contains(a, item) {
 export function wrapIndex(i, a) {
 	return maths.wrap(i, 0, a.length - 1);
 }
-export function wrapItem(i, a) {
-	return a[wrapIndex(i, a)];
-}
 
 export function firstItem(a) {
 	return a[0];
