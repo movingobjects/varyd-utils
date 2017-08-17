@@ -106,7 +106,7 @@ export function ease(val, trgt, factor = 0.5, threshold = 1) {
   return (isNaN(val) || diff(val, trgt) < threshold) ? trgt : lerp(val, trgt, factor);
 }
 
-\export function isInt(val) {
+export function isInt(val) {
   return val == Math.floor(val);
 }
 

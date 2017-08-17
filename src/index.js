@@ -9,12 +9,12 @@ import * as Rect from "./Rect";
 import * as Range from "./Range";
 import * as Vec from "./Vec";
 
-export const arrays;
-export const geom;
-export const maths;
-export const random;
-export const text;
+export { arrays };
+export { geom };
+export { maths };
+export { random };
+export { text };
 
-export const Rect;
-export const Range;
-export const Vec;
+export { Rect };
+export { Range };
+export { Vec };

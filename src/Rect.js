@@ -1,7 +1,7 @@
 
-import maths from "varyd/maths";
-import random from "varyd/random";
-import Range from "varyd/Range";
+import maths from "./maths";
+import random from "./random";
+import Range from "./Range";
 
 export default class Rect {
 

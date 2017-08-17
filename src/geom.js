@@ -1,5 +1,5 @@
 
-import maths from "varyd/maths";
+import maths from "./maths";
 
 // Pts
 /////////////////////////////////////////////

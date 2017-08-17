@@ -1,6 +1,6 @@
 
-import maths from "varyd/maths";
-import random from "varyd/random";
+import maths from "./maths";
+import random from "./random";
 
 export default class Range {
 
