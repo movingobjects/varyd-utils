@@ -102,7 +102,7 @@ export default class Span {
   }
 
   toString() {
-    return "[" + min + ".." + max + "]";
+    return "[" + this.min + ".." + this.max + "]";
   }
   clone() {
     return new Span(this.min, this.max);
