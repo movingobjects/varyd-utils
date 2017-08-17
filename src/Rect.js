@@ -1,7 +1,7 @@
 
-import maths from "./maths";
-import random from "./random";
-import Range from "./Range";
+import * as maths from "./maths";
+import * as random from "./random";
+import * as Range from "./Range";
 
 export default class Rect {
 

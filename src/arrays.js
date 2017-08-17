@@ -1,6 +1,6 @@
 
-import maths from "./maths";
-import random from "./random";
+import * as maths from "./maths";
+import * as random from "./random";
 
 
 export function shuffled(a) {
