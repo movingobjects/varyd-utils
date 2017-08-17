@@ -81,8 +81,6 @@ export function lastIndex(a) {
 	return a.length - 1;
 }
 
-/*
 export function getIndexRange(a) {
 	return new Range(0, a.length - 1);
 }
-*/
