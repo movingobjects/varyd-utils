@@ -57,7 +57,7 @@ export function shuffle(a, times = 5) {
 }
 
 export function index(a) {
-  return (a.length) ? a.length * Math.random() : -1;
+  return (a.length) ? integer(a.length - 1) : -1;
 }
 
 export function item(a) {
