@@ -1,6 +1,7 @@
 
 import * as maths from "./maths";
 import * as random from "./random";
+import * as Range from "./Range";
 
 
 export function shuffled(a) {
@@ -30,7 +31,7 @@ export function prev(i, a, clamp = false) {
 export function nextItem(item, a, clamp = false) {
 
 	let i		= a.indexOf(item),
-		iNext	= arrays.next(i, a, clamp);
+		iNext	= next(i, a, clamp);
 
 	return a[iNext];
 
@@ -38,7 +39,7 @@ export function nextItem(item, a, clamp = false) {
 export function prevItem(item, a, clamp = false) {
 
 	let i		= a.indexOf(item),
-		iPrev	= arrays.prev(i, a, clamp);
+		iPrev	= prev(i, a, clamp);
 
 	return a[iPrev];
 

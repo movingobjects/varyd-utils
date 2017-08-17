@@ -1,4 +1,7 @@
 
+import * as geom from "./geom";
+import * as random from "./random";
+
 export default class Vec {
 
   constructor(x, y) {
