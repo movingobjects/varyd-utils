@@ -2,7 +2,7 @@
 import * as maths from "./maths";
 import * as random from "./random";
 
-export default class Range {
+export default class Span {
 
   // Constructor
   /////////////////////////////////////////////
@@ -60,7 +60,7 @@ export default class Range {
     return random.integer(this.min, this.max);
   }
 
-  get isIntRange() {
+  get isIntSpan() {
     return maths.isInt(this.min) && maths.isInt(this.max);
   }
 
@@ -82,18 +82,18 @@ export default class Range {
     return maths.map(val, this.min, this.max, toMin, toMax);
   }
 
-  mapFromRange(val, fromRange, clamp = false) {
-    return maths.map(val, fromRange.min, fromRange.max, this.min, this.max, clamp);
+  mapFromSpan(val, fromSpan, clamp = false) {
+    return maths.map(val, fromSpan.min, fromSpan.max, this.min, this.max, clamp);
   }
-  mapToRange(val, toRange, clamp = false) {
-    return maths.map(val, this.min, this.max, toRange.min, toRange.max, clamp);
+  mapToSpan(val, toSpan, clamp = false) {
+    return maths.map(val, this.min, this.max, toSpan.min, toSpan.max, clamp);
   }
 
   clamp(val) {
     return maths.clamp(val, this.min, this.max);
   }
   wrap(val) {
-    if (maths.isInt(val) && isIntRange) {
+    if (maths.isInt(val) && isIntSpan) {
       return maths.wrap(val, this.min, this.max);
     } else {
       return maths.wrapNum(val, this.min, this.max);
@@ -119,7 +119,7 @@ export default class Range {
     return "[" + min + ".." + max + "]";
   }
   clone() {
-    return new Range(this.min, this.max);
+    return new Span(this.min, this.max);
   }
 
 }

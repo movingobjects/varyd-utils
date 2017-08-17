@@ -1,7 +1,7 @@
 
 import * as maths from "./maths";
 import * as random from "./random";
-import * as Range from "./Range";
+import * as Span from "./Span";
 
 export default class Rect {
 
@@ -47,11 +47,11 @@ export default class Rect {
     return this.y + this.h;
   }
 
-  get xRange() {
-    return new Range(this.x, this.x + this.w);
+  get xSpan() {
+    return new Span(this.x, this.x + this.w);
   }
-  get yRange() {
-    return new Range(this.y, this.y + this.h);
+  get ySpan() {
+    return new Span(this.y, this.y + this.h);
   }
 
   get centerX() {
