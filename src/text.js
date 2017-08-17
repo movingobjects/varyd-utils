@@ -1,4 +1,6 @@
 
+import * as random from "./random";
+
 export const QUOTE_L    = "\u201C";
 export const QUOTE_R    = "\u201D";
 
