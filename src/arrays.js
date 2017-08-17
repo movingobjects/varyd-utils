@@ -45,7 +45,7 @@ export function prevItem(item, a, clamp = false) {
 
 }
 
-export function removeFirst(item, a) {
+export function removeFirst(a, item) {
 	for (let i = 0; i < a.length; i++) {
 		if (a[i] == item) {
 			a.splice(i, 1);
@@ -53,7 +53,7 @@ export function removeFirst(item, a) {
 		}
 	}
 }
-export function removeAll(item, a) {
+export function removeAll(a, item) {
 	for (let i = 0; i < a.length; i++) {
 		if (a[i] == item) {
 			a.splice(i, 1);
