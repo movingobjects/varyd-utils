@@ -1,5 +1,5 @@
 
-export const TAO  = Math.PI * 2;
+export const TAO = Math.PI * 2;
 
 
 // 0.0 ... 1.0
@@ -56,8 +56,8 @@ export function subtractWithin(num, sub, min, max) {
 }
 
 export function wrap(num, min, max) {
-  let r  = max - min + 1,
-    n  = ((num - min) % r);
+  let r = max - min + 1,
+      n = ((num - min) % r);
   if (n < 0) {
     return max + n + 1;
   } else {
@@ -90,7 +90,7 @@ export function sign(n) {
 }
 
 export function roundTo(n, decimals) {
-  let m  = Math.pow(10, decimals);
+  let m = Math.pow(10, decimals);
   return Math.round(n * m) / m;
 }
 
@@ -106,6 +106,7 @@ export function ease(val, trgt, factor = 0.5, threshold = 1) {
   return (isNaN(val) || diff(val, trgt) < threshold) ? trgt : lerp(val, trgt, factor);
 }
 
-export function isInt(val) {
-  return val == int(val);
+\export function isInt(val) {
+  return val == Math.floor(val);
 }
+
