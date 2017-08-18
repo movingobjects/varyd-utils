@@ -14,14 +14,17 @@ Load entire library.
 ```js
 import * as varyd from 'varyd-utils';
 
-varyd.maths.lerp(5, 10, 0.25);
-varyd.random.boolean(0.25);
+let progress = vayrd.maths.norm(25, 0, 100);
+    isGoat   = varyd.random.boolean(2/3);
 ```
 
 Load individual pieces.
 
 ```js
-import { Range } from 'varyd-utils';
+import { Span, text } from 'varyd-utils';
 
-const r = new Range(0, 10);
+let charCount = new Span(10, 20),
+    latinText = text.getLatin(charCount.randomInt, true);
+
+console.log(latinText);
 ```
