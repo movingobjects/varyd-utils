@@ -8,7 +8,7 @@ export const QUOTE_R    = "\u201D";
 export function getLatin(wordCount = 1, punctuate = false) {
 
   const CHANCE_PERIOD = 0.1,
-        CHANGE_COMMA  = 0.15;
+        CHANCE_COMMA  = 0.15;
 
   let sourceWords = [
     "a", "ac", "accumsan", "ad", "adipiscing", "aenean", "aliquam", "amet", "ante",
