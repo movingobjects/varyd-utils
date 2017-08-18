@@ -14,7 +14,7 @@ Load entire library.
 ```js
 import * as varyd from 'varyd-utils';
 
-let progress = vayrd.maths.norm(25, 0, 100);
+let progress = vayrd.maths.norm(25, 0, 100),
     isGoat   = varyd.random.boolean(2/3);
 ```
 
