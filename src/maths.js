@@ -110,3 +110,7 @@ export function isInt(val) {
   return val == Math.floor(val);
 }
 
+export function divisibleBy(val, divisor) {
+  return (val % divisor) === 0;
+}
+
