@@ -43,7 +43,7 @@ export default class Span {
     return random.num(this.min, this.max);
   }
   get randomInt() {
-    return random.integer(this.min, this.max);
+    return random.int(this.min, this.max);
   }
 
   get isIntSpan() {

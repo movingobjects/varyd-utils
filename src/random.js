@@ -9,7 +9,7 @@ export function num(min = 1, max = NaN) {
   }
   return (Math.random() * (max - min)) + min;
 }
-export function integer(min, max = NaN) {
+export function int(min, max = NaN) {
   if (isNaN(max)) {
     max  = min;
     min  = 0;
@@ -57,7 +57,7 @@ export function shuffle(a, times = 5) {
 }
 
 export function index(a) {
-  return (a.length) ? integer(a.length - 1) : -1;
+  return (a.length) ? int(a.length - 1) : -1;
 }
 
 export function item(a) {
