@@ -14,17 +14,19 @@ Load entire library.
 ```js
 import * as varyd from 'varyd-utils';
 
-let progress = vayrd.maths.norm(25, 0, 100),
-    isGoat   = varyd.random.boolean(2/3);
+let isGoat   = varyd.random.boolean(2/3);
 ```
 
 Load individual pieces.
 
 ```js
-import { Span, text } from 'varyd-utils';
+import { Span } from 'varyd-utils';
 
-let charCount = new Span(10, 20),
-    latinText = text.getLatin(charCount.randomInt, true);
+let countSpan = new Span(1, 10);
+```
 
-console.log(latinText);
+```js
+import { getLatin } from 'varyd-utils/text';
+
+console.log(getLatin(15, true));
 ```
