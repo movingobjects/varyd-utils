@@ -1,6 +1,6 @@
 {
   "name": "varyd-utils",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "An ES6 JavaScript utility library",
   "main": "index.js",
   "scripts": {},
