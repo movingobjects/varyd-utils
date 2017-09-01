@@ -108,6 +108,10 @@ export default class Rect {
     return new Rect(this.x, this.y, this.w, this.h);
   }
 
+  toString() {
+    return `(x: ${x}, y: ${y}, w: ${w}, h: ${h})`;
+  }
+
   contains(x, y) {
     if (x < this.left) return false;
     if (x > this.right) return false;
@@ -143,6 +147,13 @@ export default class Rect {
   }
   normY(val) {
     return maths.norm(val, this.top, this.bottom);
+  }
+
+  mapX(val, min, max) {
+    return maths.lerp(min, max, this.normX(val));
+  }
+  mapY(val, min, max) {
+    return maths.lerp(min, max, this.normY(val));
   }
 
 }
