@@ -109,7 +109,7 @@ export default class Rect {
   }
 
   toString() {
-    return `(x: ${x}, y: ${y}, w: ${w}, h: ${h})`;
+    return `(x: ${this.x}, y: ${this.y}, w: ${this.w}, h: ${this.h})`;
   }
 
   contains(x, y) {
