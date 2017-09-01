@@ -156,4 +156,28 @@ export default class Rect {
     return maths.lerp(min, max, this.normY(val));
   }
 
+  absolutize() {
+
+    let tempX  = this.x,
+        tempY  = this.y,
+        tempW  = this.w,
+        tempH  = this.h;
+
+    if (tempW < 0) {
+      this.x = tempX + tempW;
+      this.w = -tempW;
+    }
+
+    if (tempH < 0) {
+      this.y = tempY + tempH;
+      this.h = -tempH;
+    }
+
+  }
+  absolutized() {
+    let r = this.clone();
+        r.absolutize()
+    return r;
+  }
+
 }
