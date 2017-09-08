@@ -105,4 +105,9 @@ export default class Range {
     return new Range(this.min, this.max);
   }
 
+  envelop(val) {
+    this.min  = Math.min(this.min, val);
+    this.max  = Math.min(this.max, val);
+  }
+
 }
