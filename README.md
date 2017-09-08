@@ -20,9 +20,9 @@ let isGoat   = varyd.random.boolean(2/3);
 Load individual pieces.
 
 ```js
-import { Span } from 'varyd-utils';
+import { Range } from 'varyd-utils';
 
-let countSpan = new Span(1, 10);
+let countRange = new Range(1, 10);
 ```
 
 ```js

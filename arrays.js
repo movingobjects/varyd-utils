@@ -1,7 +1,7 @@
 
 import * as maths from "./maths";
 import * as random from "./random";
-import * as Span from "./Span";
+import * as Range from "./Range";
 
 
 export function shuffled(a) {
@@ -81,6 +81,6 @@ export function lastIndex(a) {
 	return a.length - 1;
 }
 
-export function getIndexSpan(a) {
-	return new Span(0, a.length - 1);
+export function getIndexRange(a) {
+	return new Range(0, a.length - 1);
 }

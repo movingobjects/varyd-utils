@@ -12,6 +12,6 @@ export { random };
 export { text };
 
 export { default as Rect } from "./Rect";
-export { default as Span } from "./Span";
+export { default as Range } from "./Range";
 export { default as Vec } from "./Vec";
 export { default as Dispatcher } from "./Dispatcher";
