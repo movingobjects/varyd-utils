@@ -6,7 +6,6 @@ import * as Span from "./Span";
 export default class Rect {
 
   // Constructor
-  /////////////////////////////////////////////
 
   constructor(x, y, w, h) {
 
@@ -18,7 +17,6 @@ export default class Rect {
   }
 
   // Getters & setters
-  /////////////////////////////////////////////
 
   get width() {
     return this.w;
@@ -102,7 +100,6 @@ export default class Rect {
 
 
   // Public methods
-  /////////////////////////////////////////////
 
   clone() {
     return new Rect(this.x, this.y, this.w, this.h);

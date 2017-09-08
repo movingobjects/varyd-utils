@@ -1,6 +1,5 @@
 
 // Get
-/////////////////////////////////////////////
 
 export function num(min = 1, max = NaN) {
   if (isNaN(max)) {
@@ -45,7 +44,6 @@ export function wiggle(n, freedom) {
 
 
 // Arrays
-/////////////////////////////////////////////
 
 export function shuffle(a, times = 5) {
   if (a.length <= 1) return a;
@@ -66,4 +64,3 @@ export function item(a) {
 export function items(a, count) {
   return shuffle(a).slice(0, count);
 }
-

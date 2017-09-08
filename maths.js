@@ -3,7 +3,6 @@ export const TAO = Math.PI * 2;
 
 
 // 0.0 ... 1.0
-/////////////////////////////////////////////
 
 export function lerp(min, max, val = 0.5) {
   return (min * (1 - val)) + (max * val)
@@ -31,7 +30,6 @@ export function biToUni(val) {
 
 
 // Loops & ranges
-/////////////////////////////////////////////
 
 export function nextWithin(num, min, max, clamp = false) {
   if (clamp) {
@@ -83,7 +81,6 @@ export function clamp(num, min = 0, max = 1) {
 
 
 // Misc
-/////////////////////////////////////////////
 
 export function sign(n) {
   return (n > 0) ? 1 : ((n < 0) ? -1 : 0);
@@ -113,4 +110,3 @@ export function isInt(val) {
 export function divisibleBy(val, divisor) {
   return (val % divisor) === 0;
 }
-

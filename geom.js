@@ -2,7 +2,6 @@
 import * as maths from "./maths";
 
 // Pts
-/////////////////////////////////////////////
 
 export function transformPt(pt, scaleX, scaleY, rads) {
   return rotatePt(scalePt(pt, scaleX, scaleY), rads);
@@ -65,8 +64,7 @@ export function lerpPt(p1, p2, val = 0.5) {
 }
 
 
-// Trig 
-/////////////////////////////////////////////
+// Trig
 
 export function degToRad(degs) {
   return degs * (maths.TAO / 360);
@@ -100,7 +98,6 @@ export function getRadFromXY(fromX, fromY, toX, toY) {
 
 
 // Areas
-/////////////////////////////////////////////
 
 export function lerpRect(rectA, rectB, val = 0.5) {
 
@@ -155,4 +152,3 @@ export function getFitRect(w, h, area) {
   };
 
 }
-

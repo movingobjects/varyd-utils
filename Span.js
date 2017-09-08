@@ -5,7 +5,6 @@ import * as random from "./random";
 export default class Span {
 
   // Constructor
-  /////////////////////////////////////////////
 
   constructor(min = NaN, max = NaN) {
 
@@ -23,7 +22,6 @@ export default class Span {
   }
 
   // Getters & setters
-  /////////////////////////////////////////////
 
   get middle() {
     return this.lerp(0.5);
@@ -52,7 +50,6 @@ export default class Span {
 
 
   // Methods
-  /////////////////////////////////////////////
 
   lerp(val, clamp = false) {
     return maths.lerp(this.min, this.max, val, clamp);

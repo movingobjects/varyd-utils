@@ -20,7 +20,6 @@ export default class Vec {
   }
 
   // Getters & setters
-  /////////////////////////////////////////////
 
   get magnitude() {
     return Math.sqrt(this.magSq)
@@ -38,7 +37,6 @@ export default class Vec {
 
 
   // Methods
-  /////////////////////////////////////////////
 
   static random(minX, maxX, minY, maxY) {
     return new Vec(random.num(minX, maxX), random.num(minY, maxY));
@@ -120,4 +118,3 @@ export default class Vec {
   }
 
 }
-
