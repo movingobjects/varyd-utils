@@ -16,7 +16,7 @@ export default class Rect {
 
   }
 
-  // Getters & setters
+  // Get/set
 
   get width() {
     return this.w;

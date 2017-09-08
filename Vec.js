@@ -19,7 +19,7 @@ export default class Vec {
 
   }
 
-  // Getters & setters
+  // Get/set
 
   get magnitude() {
     return Math.sqrt(this.magSq)

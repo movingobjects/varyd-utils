@@ -21,7 +21,7 @@ export default class Span {
 
   }
 
-  // Getters & setters
+  // Get/set
 
   get middle() {
     return this.lerp(0.5);
