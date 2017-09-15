@@ -4,20 +4,32 @@ export const TAO = Math.PI * 2;
 
 // 0.0 ... 1.0
 
-export function lerp(min, max, val = 0.5) {
-  return (min * (1 - val)) + (max * val)
+export function lerp(min, max, val = 0.5, clamp = false) {
+  if (clamp) {
+    return clamp((min * (1 - val)) + (max * val), min, max);
+  } else {
+    return (min * (1 - val)) + (max * val)
+  }
 }
 
-export function coserp(min, max, val = 0.5) {
-  return lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2);
+export function coserp(min, max, val = 0.5, clamp = false) {
+  if (clamp) {
+    return clamp(lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2), min, max);
+  } else {
+    return lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2);
+  }
 }
 
-export function norm(val, min, max) {
-  return (val - min) / (max - min);
+export function norm(val, min, max, clamp = false) {
+  if (clamp) {
+    return clamp((val - min) / (max - min), 0, 1);
+  } else {
+    return (val - min) / (max - min);
+  }
 }
 
-export function map(val, min, max, tmin, tmax) {
-  return lerp(tmin, tmax, norm(val, min, max));
+export function map(val, min, max, tmin, tmax, clamp = false) {
+  return lerp(tmin, tmax, norm(val, min, max, clamp));
 }
 
 export function uniToBi(val) {
