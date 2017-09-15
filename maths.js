@@ -4,32 +4,32 @@ export const TAO = Math.PI * 2;
 
 // 0.0 ... 1.0
 
-export function lerp(min, max, val = 0.5, clamp = false) {
-  if (clamp) {
+export function lerp(min, max, val = 0.5, doClamp = false) {
+  if (doClamp) {
     return clamp((min * (1 - val)) + (max * val), min, max);
   } else {
     return (min * (1 - val)) + (max * val)
   }
 }
 
-export function coserp(min, max, val = 0.5, clamp = false) {
-  if (clamp) {
+export function coserp(min, max, val = 0.5, doClamp = false) {
+  if (doClamp) {
     return clamp(lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2), min, max);
   } else {
     return lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2);
   }
 }
 
-export function norm(val, min, max, clamp = false) {
-  if (clamp) {
+export function norm(val, min, max, doClamp = false) {
+  if (doClamp) {
     return clamp((val - min) / (max - min), 0, 1);
   } else {
     return (val - min) / (max - min);
   }
 }
 
-export function map(val, min, max, tmin, tmax, clamp = false) {
-  return lerp(tmin, tmax, norm(val, min, max, clamp));
+export function map(val, min, max, tmin, tmax, doClamp = false) {
+  return lerp(tmin, tmax, norm(val, min, max, doClamp));
 }
 
 export function uniToBi(val) {
@@ -43,15 +43,15 @@ export function biToUni(val) {
 
 // Loops & ranges
 
-export function nextWithin(num, min, max, clamp = false) {
-  if (clamp) {
+export function nextWithin(num, min, max, doClamp = false) {
+  if (doClamp) {
     return clamp(num + 1, min, max);
   } else {
     return addWithin(num, 1, min, max);
   }
 }
-export function prevWithin(num, min, max, clamp = false) {
-  if (clamp) {
+export function prevWithin(num, min, max, doClamp = false) {
+  if (doClamp) {
     return clamp(num - 1, min, max);
   } else {
     return subtractWithin(num, 1, min, max);
