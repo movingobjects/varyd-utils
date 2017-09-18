@@ -1,4 +1,6 @@
 
+import * as text from "./text";
+
 export function xhrFetch(path, body = null) {
 
   return new Promise(function(resolve, reject) {
@@ -21,7 +23,6 @@ export function xhrFetch(path, body = null) {
       }
 
     }
-
     xhr.onerror = function(data) {
       reject(new TypeError('Problem loading: ' + path));
     }
