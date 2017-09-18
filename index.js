@@ -2,12 +2,14 @@
 import * as arrays from "./arrays";
 import * as geom from "./geom";
 import * as maths from "./maths";
+import * as net from "./net";
 import * as random from "./random";
 import * as text from "./text";
 
 export { arrays };
 export { geom };
 export { maths };
+export { net };
 export { random };
 export { text };
 
