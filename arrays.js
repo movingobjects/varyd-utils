@@ -3,84 +3,83 @@ import * as maths from "./maths";
 import * as random from "./random";
 import * as Range from "./Range";
 
-
 export function shuffled(a) {
-	return random.shuffle(a);
+  return random.shuffle(a);
 }
 export function randomItem(a) {
-	return random.item(a);
+  return random.item(a);
 }
 
 export function removeDuplicates(a) {
-	return Array.from(new Set(a));
+  return Array.from(new Set(a));
 }
 
 export function addOnce(a, item) {
-	if (a.indexOf(item) == -1) {
-		a.push(item);
-	}
+  if (a.indexOf(item) == -1) {
+    a.push(item);
+  }
 }
 
 export function next(i, a, clamp = false) {
-	return maths.nextWithin(i, 0, a.length - 1, clamp);
+  return maths.nextWithin(i, 0, a.length - 1, clamp);
 }
 export function prev(i, a, clamp = false) {
-	return maths.prevWithin(i, 0, a.length - 1, clamp);
+  return maths.prevWithin(i, 0, a.length - 1, clamp);
 }
 
 export function nextItem(item, a, clamp = false) {
 
-	let i		= a.indexOf(item),
-		iNext	= next(i, a, clamp);
+  let i    = a.indexOf(item),
+    iNext  = next(i, a, clamp);
 
-	return a[iNext];
+  return a[iNext];
 
 }
 export function prevItem(item, a, clamp = false) {
 
-	let i		= a.indexOf(item),
-		iPrev	= prev(i, a, clamp);
+  let i    = a.indexOf(item),
+    iPrev  = prev(i, a, clamp);
 
-	return a[iPrev];
+  return a[iPrev];
 
 }
 
 export function removeFirst(a, item) {
-	for (let i = 0; i < a.length; i++) {
-		if (a[i] == item) {
-			a.splice(i, 1);
-			return;
-		}
-	}
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] == item) {
+      a.splice(i, 1);
+      return;
+    }
+  }
 }
 export function removeAll(a, item) {
-	for (let i = 0; i < a.length; i++) {
-		if (a[i] == item) {
-			a.splice(i, 1);
-			i--;
-		}
-	}
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] == item) {
+      a.splice(i, 1);
+      i--;
+    }
+  }
 }
 
 export function contains(a, item) {
-	return (a.indexOf(item) != -1);
+  return (a.indexOf(item) != -1);
 }
 
 export function wrapIndex(i, a) {
-	return maths.wrap(i, 0, a.length - 1);
+  return maths.wrap(i, 0, a.length - 1);
 }
 
 export function firstItem(a) {
-	return a[0];
+  return a[0];
 }
 export function lastItem(a) {
-	return a[lastIndex(a)];
+  return a[lastIndex(a)];
 }
 
 export function lastIndex(a) {
-	return a.length - 1;
+  return a.length - 1;
 }
 
 export function getIndexRange(a) {
-	return new Range(0, a.length - 1);
+  return new Range(0, a.length - 1);
 }
