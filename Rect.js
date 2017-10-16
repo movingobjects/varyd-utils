@@ -154,22 +154,14 @@ export default class Rect {
   }
 
   absolutize() {
-
-    let tempX  = this.x,
-        tempY  = this.y,
-        tempW  = this.w,
-        tempH  = this.h;
-
-    if (tempW < 0) {
-      this.x = tempX + tempW;
-      this.w = -tempW;
+    if (this.w < 0) {
+      this.x  += this.w;
+      this.w  = -this.w;
     }
-
-    if (tempH < 0) {
-      this.y = tempY + tempH;
-      this.h = -tempH;
+    if (this.h < 0) {
+      this.y  += this.h;
+      this.h  = -this.h;
     }
-
   }
   absolutized() {
     let r = this.clone();
