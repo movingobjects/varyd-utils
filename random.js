@@ -26,6 +26,10 @@ export function bit(chance = 0.5) {
   return (Math.random() < chance) ? 1 : 0;
 }
 
+export function color() {
+  return int(0xffffff);
+}
+
 export function norm(times = 2) {
   let sum  = 0;
   for (let i = 0; i < times; i++) {
@@ -40,6 +44,22 @@ export function sort(a, b) {
 
 export function wiggle(n, freedom) {
   return n + num(-freedom, freedom);
+}
+
+
+// Geom
+
+export function ptInCircle(radius) {
+
+  const t = num(2 * Math.PI),
+        u = num() + num(),
+        r = (u > 1) ? (2 - u) : u;
+
+  return {
+    x: radius * r * Math.cos(t),
+    y: radius * r * Math.sin(t)
+  };
+
 }
 
 
