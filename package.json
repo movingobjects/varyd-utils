@@ -6,12 +6,12 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sccottt/varyd-utils.git"
+    "url": "git+https://github.com/movingobjects/varyd-utils.git"
   },
   "author": "Scott Thiessen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sccottt/varyd-utils/issues"
+    "url": "https://github.com/movingobjects/varyd-utils/issues"
   },
-  "homepage": "https://github.com/sccottt/varyd-utils#readme"
+  "homepage": "https://github.com/movingobjects/varyd-utils#readme"
 }
