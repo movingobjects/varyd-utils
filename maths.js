@@ -1,5 +1,8 @@
 
-export const TAO = Math.PI * 2;
+export const TAO          = Math.PI * 2;
+export const PHI          = (1 + Math.sqrt(5)) / 2;
+export const GOLDEN_RATIO = PHI;
+export const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 
 
 // 0.0 ... 1.0
