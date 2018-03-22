@@ -14,7 +14,7 @@ Load entire library.
 ```js
 import * as varyd from 'varyd-utils';
 
-let isGoat   = varyd.random.boolean(2/3);
+let isGoat = varyd.random.boolean(2/3);
 ```
 
 Load individual pieces.
