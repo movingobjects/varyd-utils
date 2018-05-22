@@ -107,9 +107,9 @@ export function getMix(colorA, colorB, amt) {
   let rgbA = toRgb(colorA),
       rgbB = toRgb(colorB);
 
-  let r = maths.lerp(rgbA.r, rgbB.r, amt, true),
-      g = maths.lerp(rgbA.g, rgbB.g, amt, true),
-      b = maths.lerp(rgbA.b, rgbB.b, amt, true);
+  let r = maths.lerp(rgbA.r, rgbB.r, maths.clamp(amt)),
+      g = maths.lerp(rgbA.g, rgbB.g, maths.clamp(amt)),
+      b = maths.lerp(rgbA.b, rgbB.b, maths.clamp(amt));
 
   return fromRgb(r, g, b);
 
