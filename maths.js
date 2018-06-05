@@ -5,30 +5,29 @@ export const GOLDEN_RATIO = PHI;
 export const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 
 
-// 0.0 ... 1.0
+// Interpolation
 
 export function lerp(min, max, val = 0.5, doClamp = false) {
-  if (doClamp) {
-    return clamp((min * (1 - val)) + (max * val), min, max);
-  } else {
-    return (min * (1 - val)) + (max * val)
-  }
+  let output = (min * (1 - val)) + (max * val);
+  return doClamp ? clamp(output, min, max) : output;
 }
 
 export function coserp(min, max, val = 0.5, doClamp = false) {
-  if (doClamp) {
-    return clamp(lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2), min, max);
-  } else {
-    return lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2);
-  }
+  let output = lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2);
+  return doClamp ? clamp(output, min, max) : output;
+}
+export function smoothStep(min, max, val = 0.5, doClamp = false) {
+  let output = lerp(min, max, val * val * (3 - (2 * val)))
+  return doClamp ? clamp(output, min, max) : output;
+}
+export function smootherStep(min, max, val = 0.5, doClamp = false) {
+  let output = lerp(min, max, val * val * val * (val * (6 * val - 15) + 10))
+  return doClamp ? clamp(output, min, max) : output;
 }
 
 export function norm(val, min, max, doClamp = false) {
-  if (doClamp) {
-    return clamp((val - min) / (max - min), 0, 1);
-  } else {
-    return (val - min) / (max - min);
-  }
+  let output = (val - min) / (max - min);
+  return doClamp ? clamp(output, 0, 1) : output;
 }
 
 export function map(val, min, max, tmin, tmax, doClamp = false) {
