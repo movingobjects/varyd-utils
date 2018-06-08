@@ -19,6 +19,10 @@ export function addOnce(arr, item) {
   }
 }
 
+export function includesAny(arr, vals) {
+  return vals.some((val) => arr.includes(val));
+}
+
 export function bifurcate(arr, fn) {
   return arr.reduce((acc, val, i) => {
     acc[fn(val, i) ? 0 : 1].push(val);
