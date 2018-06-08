@@ -1,85 +1,69 @@
 
-import * as maths from "./maths";
-import * as random from "./random";
-import * as Range from "./Range";
+import * as maths from './maths';
+import * as random from './random';
+import * as Range from './Range';
 
-export function shuffled(a) {
-  return random.shuffle(a);
+export function shuffled(arr) {
+  return random.shuffle(arr);
 }
-export function randomItem(a) {
-  return random.item(a);
-}
-
-export function removeDuplicates(a) {
-  return Array.from(new Set(a));
+export function randomItem(arr) {
+  return random.item(arr);
 }
 
-export function addOnce(a, item) {
-  if (a.indexOf(item) == -1) {
-    a.push(item);
+export function unique(arr) {
+  return Array.from(new Set(arr));
+}
+export function addOnce(arr, item) {
+  if (arr.indexOf(item) == -1) {
+    arr.push(item);
   }
 }
 
-export function next(i, a, clamp = false) {
-  return maths.nextWithin(i, 0, a.length - 1, clamp);
+export function bifurcate(arr, fn) {
+  return arr.reduce((acc, val, i) => {
+    acc[fn(val, i) ? 0 : 1].push(val);
+    return acc;
+  }, [[], []]);
 }
-export function prev(i, a, clamp = false) {
-  return maths.prevWithin(i, 0, a.length - 1, clamp);
-}
-
-export function nextItem(item, a, clamp = false) {
-
-  let i    = a.indexOf(item),
-    iNext  = next(i, a, clamp);
-
-  return a[iNext];
-
-}
-export function prevItem(item, a, clamp = false) {
-
-  let i    = a.indexOf(item),
-    iPrev  = prev(i, a, clamp);
-
-  return a[iPrev];
-
+export function chunk(arr, size) {
+  return Array.from({
+    length: Math.ceil(arr.length / size)
+  }, (v, i) =>
+    arr.slice(i * size, i * size + size)
+  );
 }
 
-export function removeFirst(a, item) {
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] == item) {
-      a.splice(i, 1);
-      return;
-    }
-  }
+export function next(i, arr, clamp = false) {
+  return maths.nextWithin(i, 0, arr.length - 1, clamp);
 }
-export function removeAll(a, item) {
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] == item) {
-      a.splice(i, 1);
-      i--;
-    }
-  }
+export function prev(i, arr, clamp = false) {
+  return maths.prevWithin(i, 0, arr.length - 1, clamp);
+}
+export function nextItem(item, arr, clamp = false) {
+  return arr[next(arr.indexOf(item), arr, clamp)];
+}
+export function prevItem(item, arr, clamp = false) {
+  return arr[prev(arr.indexOf(item), arr, clamp)];
 }
 
-export function contains(a, item) {
-  return (a.indexOf(item) != -1);
+export function firstItem(arr) {
+  return arr[0];
+}
+export function lastItem(arr) {
+  return arr[lastIndex(arr)];
+}
+export function lastIndex(arr) {
+  return arr.length - 1;
 }
 
-export function wrapIndex(i, a) {
-  return maths.wrap(i, 0, a.length - 1);
+export function wrapIndex(i, arr) {
+  return maths.wrap(i, 0, arr.length - 1);
 }
-
-export function firstItem(a) {
-  return a[0];
+export function indexOfEach(arr, val) {
+  const indices = [];
+  arr.forEach((item, i) => (item === val) && indices.push(i));
+  return indices;
 }
-export function lastItem(a) {
-  return a[lastIndex(a)];
-}
-
-export function lastIndex(a) {
-  return a.length - 1;
-}
-
-export function getIndexRange(a) {
-  return new Range(0, a.length - 1);
+export function getIndexRange(arr) {
+  return new Range(0, arr.length - 1);
 }

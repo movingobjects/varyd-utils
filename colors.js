@@ -1,5 +1,5 @@
 
-import * as maths from "./maths";
+import * as maths from './maths';
 
 export function toHex(color) {
 
@@ -51,7 +51,7 @@ export function toHsv(color) {
 
 export function fromHex(hex) {
 
-  let hasHash = hex.charAt(0) == "#",
+  let hasHash = hex.charAt(0) == '#',
       hexVal  = hex.substr(hasHash ? 1 : 0, 6);
 
   return parseInt(hexVal, 16);

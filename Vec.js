@@ -1,12 +1,12 @@
 
-import * as geom from "./geom";
-import * as random from "./random";
+import * as geom from './geom';
+import * as random from './random';
 
 export default class Vec {
 
   constructor(x, y) {
 
-    const xIsVec  = (x !== null) && (typeof x === "object") && (x.x !== undefined) && (x.y !== undefined);
+    const xIsVec  = (x !== null) && (typeof x === 'object') && (x.x !== undefined) && (x.y !== undefined);
 
     if (xIsVec) {
       this.x  = x.x;
@@ -114,7 +114,7 @@ export default class Vec {
     return new Vec(this.x, this.y);
   }
   toString() {
-    return "(x: " + this.x + ", y: " + this.y + ")";
+    return `(x: ${x}, y: ${y})`;
   }
 
 }

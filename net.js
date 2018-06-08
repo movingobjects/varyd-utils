@@ -1,5 +1,5 @@
 
-import * as text from "./text";
+import * as text from './text';
 
 export function xhrFetch(path, body = null) {
 

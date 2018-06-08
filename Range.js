@@ -1,6 +1,6 @@
 
-import * as maths from "./maths";
-import * as random from "./random";
+import * as maths from './maths';
+import * as random from './random';
 
 export default class Range {
 
@@ -99,7 +99,7 @@ export default class Range {
   }
 
   toString() {
-    return "[" + this.min + ".." + this.max + "]";
+    return `[${this.min}..${this.max}]`;
   }
   clone() {
     return new Range(this.min, this.max);

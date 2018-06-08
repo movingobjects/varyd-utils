@@ -1,5 +1,5 @@
 
-import * as maths from "./maths";
+import * as maths from './maths';
 
 // Pts
 
