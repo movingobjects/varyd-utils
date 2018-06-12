@@ -102,6 +102,10 @@ export function hsvToRgb(h, s, v) {
   return toRgb(fromHsv(h, s, v));
 }
 
+export function grayscale(amt) {
+  return fromRgb(amt, amt, amt);
+}
+
 export function getMix(colorA, colorB, amt) {
 
   let rgbA = toRgb(colorA),
