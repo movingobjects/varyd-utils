@@ -11,22 +11,29 @@ export function lerp(min, max, val = 0.5, doClamp = false) {
   let output = (min * (1 - val)) + (max * val);
   return doClamp ? clamp(output, min, max) : output;
 }
-
 export function coserp(min, max, val = 0.5, doClamp = false) {
   let output = lerp(min, max, (1 - Math.cos(val * Math.PI)) / 2);
   return doClamp ? clamp(output, min, max) : output;
 }
-export function smoothStep(min, max, val = 0.5, doClamp = false) {
+export function smoothLerp(min, max, val = 0.5, doClamp = false) {
   let output = lerp(min, max, val * val * (3 - (2 * val)))
   return doClamp ? clamp(output, min, max) : output;
 }
-export function smootherStep(min, max, val = 0.5, doClamp = false) {
+export function smootherLerp(min, max, val = 0.5, doClamp = false) {
   let output = lerp(min, max, val * val * val * (val * (6 * val - 15) + 10))
   return doClamp ? clamp(output, min, max) : output;
 }
 
 export function norm(val, min, max, doClamp = false) {
   let output = (val - min) / (max - min);
+  return doClamp ? clamp(output, 0, 1) : output;
+}
+export function smoothNorm(val, min, max, doClamp = false) {
+  let output = smoothLerp(0, 1, (val - min) / (max - min));
+  return doClamp ? clamp(output, 0, 1) : output;
+}
+export function smootherNorm(val, min, max, doClamp = false) {
+  let output = smootherLerp(0, 1, (val - min) / (max - min));
   return doClamp ? clamp(output, 0, 1) : output;
 }
 
