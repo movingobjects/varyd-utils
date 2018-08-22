@@ -6,12 +6,13 @@ export default class Keys {
   constructor() {
 
     this.shortcuts = [];
+    this.onKeyDown = this.onKeyDown.bind(this);
 
     document.addEventListener('keydown', this.onKeyDown);
 
   }
 
-  onKeyDown = (e) => {
+  onKeyDown(e) {
 
     const parseKey = (key) => {
 
