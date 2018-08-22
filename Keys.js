@@ -16,11 +16,13 @@ export default class Keys {
 
     const parseKey = (key) => {
 
+      key = key.toLowerCase();
+
       if (key.startsWith('arrow')) {
         key = key.slice(5);
       }
 
-      return key.toLowerCase();
+      return key;
 
     }
 
@@ -30,10 +32,10 @@ export default class Keys {
 
       if (key !== shortcut.key) return false;
 
-      if (e.metaKey !== shortcut.reqMeta) return false;
-      if (e.ctrlKey !== shortcut.reqCtrl) return false;
+      if (e.metaKey  !== shortcut.reqMeta)  return false;
+      if (e.ctrlKey  !== shortcut.reqCtrl)  return false;
       if (e.shiftKey !== shortcut.reqShift) return false;
-      if (e.altKey !== shortcut.reqAlt) return false;
+      if (e.altKey   !== shortcut.reqAlt)   return false;
 
       return true;
 
@@ -45,7 +47,7 @@ export default class Keys {
 
   addShortcut(shortcut, callback) {
 
-    const mods  = shortcut.split('+').map((m) => m.toLowerCase());
+    const mods     = shortcut.split('+').map((m) => m.toLowerCase());
 
     const key      = mods.pop(),
           reqMeta  = arrays.includesAny(mods, ['command', 'cmd', 'win']),
