@@ -46,6 +46,13 @@ export default class Vec {
     return new Vec(x2 - x1, y2 - y1);
   }
 
+  static fromAngle(angle, inDegrees = false) {
+    if (inDegrees) {
+      angle = angle * (maths.TAO / 360);
+    }
+    return new Vec(Math.cos(angle), Math.sin(angle));
+  }
+
   distTo(pt) {
     return geom.dist(this.x, this.y, pt.x, pt.y);
   }
