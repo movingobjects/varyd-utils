@@ -121,7 +121,7 @@ export default class Vec {
     return new Vec(this.x, this.y);
   }
   toString() {
-    return `(x: ${x}, y: ${y})`;
+    return `(x: ${this.x}, y: ${this.y})`;
   }
 
 }
