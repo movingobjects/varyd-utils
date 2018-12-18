@@ -173,3 +173,13 @@ export function getFakeWord(len) {
   return word.slice(0, len);
 
 }
+
+
+// Other
+
+export function getWidth(text, font) {
+  let c    = document.createElement('canvas'),
+      ctx  = c.getContext('2d');
+  ctx.font = font;
+  return ctx.measureText(text).width;
+}
