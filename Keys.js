@@ -14,17 +14,7 @@ export default class Keys {
 
   onKeyDown(e) {
 
-    const parseKey = (key) => {
-
-      key = key.toLowerCase();
-
-      if (key.startsWith('arrow')) {
-        key = key.slice(5);
-      }
-
-      return key;
-
-    }
+    const parseKey = (key) => key.toLowerCase();
 
     const matchesKey = (shortcut) => {
 
