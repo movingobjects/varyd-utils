@@ -123,6 +123,12 @@ export function avg(...nums) {
 export function ease(val, trgt, factor = 0.5, threshold = 1) {
   return (isNaN(val) || diff(val, trgt) < threshold) ? trgt : lerp(val, trgt, factor);
 }
+export function smoothEase(val, trgt, factor = 0.5, threshold = 1) {
+  return (isNaN(val) || diff(val, trgt) < threshold) ? trgt : smoothLerp(val, trgt, factor);
+}
+export function smootherEase(val, trgt, factor = 0.5, threshold = 1) {
+  return (isNaN(val) || diff(val, trgt) < threshold) ? trgt : smootherLerp(val, trgt, factor);
+}
 
 export function isInt(val) {
   return val == Math.floor(val);
