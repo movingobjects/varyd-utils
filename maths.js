@@ -96,7 +96,7 @@ export function clamp(num, min = 0, max = 1) {
   if (min <= max) {
     return Math.max(min, Math.min(max, num));
   } else {
-    return Math.min(max, Math.min(min, num));
+    return Math.max(max, Math.min(min, num));
   }
 }
 
