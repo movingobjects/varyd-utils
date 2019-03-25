@@ -38,10 +38,6 @@ export function norm(times = 2) {
   return sum/times;
 }
 
-export function sort(a, b) {
-  return sign();
-}
-
 export function wiggle(n, freedom) {
   return n + num(-freedom, freedom);
 }
@@ -65,13 +61,22 @@ export function ptInCircle(radius) {
 
 // Arrays
 
-export function shuffle(a, times = 5) {
-  if (a.length <= 1) return a;
-  let r  = a.slice();
-  for (let i = 0; i < times; i++) {
-    r.sort(sort);
+export function shuffle(arr) {
+
+  let a    = arr.slice(),
+      m    = a.length,
+      i    = 0,
+      swap = 0;
+
+  while (m) {
+    i    = Math.floor(Math.random() * m--);
+    swap = a[m];
+    a[m] = a[i];
+    a[i] = swap;
   }
-  return r;
+
+  return a;
+
 }
 
 export function index(a) {
