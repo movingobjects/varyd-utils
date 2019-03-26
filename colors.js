@@ -48,6 +48,18 @@ export function toHsv(color) {
   return { h, s, v };
 
 }
+export function toCssVar(color) {
+
+  if (!color) return `0,0,0`;
+
+  let c = toRgb(color),
+      r = Math.round(c.r * 255),
+      g = Math.round(c.g * 255),
+      b = Math.round(c.b * 255);
+
+  return `${r},${g},${b}`;
+
+}
 
 export function fromHex(hex) {
 
