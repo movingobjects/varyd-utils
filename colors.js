@@ -118,3 +118,18 @@ export function getMix(colorA, colorB, amt) {
   return fromRgb(r, g, b);
 
 }
+
+export function brightness(color) {
+
+  const MULT_R = 0.241,
+        MULT_G = 0.691,
+        MULT_B = 0.068;
+
+  const rgb = toRgb(color),
+        r   = MULT_R * (rgb.r * rgb.r),
+        g   = MULT_G * (rgb.g * rgb.g),
+        b   = MULT_B * (rgb.b * rgb.b);
+
+  return Math.sqrt(r + g + b);
+
+}
