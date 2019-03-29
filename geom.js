@@ -110,45 +110,33 @@ export function lerpRect(rectA, rectB, val = 0.5) {
 
 }
 
-export function getFillRect(w, h, area) {
+export function getCoverRect(w, h, aw, ah) {
 
-  const aw = area.width,
-        ah = area.height,
-        ax = area.x,
-        ay = area.y,
-        sw = ah * w / h,
-        sh = aw * h / w,
-        rw = (sw > aw) ? sw : aw,
-        rh = (sw > aw) ? ah : sh,
-        rx = Math.min(ax, Math.max(ax + aw - rw, ax + Math.round((aw - rw) / 2))),
-        ry = Math.min(ay, Math.max(ay + ah - rh, ay + Math.round((ah - rh) / 2)));
+  const sw = ah * (w / h),
+        sh = aw * (h / w),
+        cw = (sw >= aw) ? sw : aw,
+        ch = (sw >= aw) ? ah : sh;
 
   return {
-    x: rx,
-    y: ry,
-    width: rw,
-    height: rh
+    x: (aw - cw) / 2,
+    y: (ah - ch) / 2,
+    width: cw,
+    height: ch
   };
 
 }
-export function getFitRect(w, h, area) {
+export function getContainRect(w, h, aw, ah) {
 
-  const aw = area.width,
-        ah = area.height,
-        ax = area.x,
-        ay = area.y,
-        sw = ah * w / h,
-        sh = aw * h / w,
-        rw = (sw <= aw) ? sw : aw,
-        rh = (sw <= aw) ? ah : sh,
-        rx = ax + Math.round((aw - rw) / 2),
-        ry = ay + Math.round((ah - rh) / 2);
+  const sw = ah * (w / h),
+        sh = aw * (h / w),
+        cw = (sw <= aw) ? sw : aw,
+        ch = (sw <= aw) ? ah : sh;
 
   return {
-    x: rx,
-    y: ry,
-    width: rw,
-    height: rh
+    x: (aw - cw) / 2,
+    y: (ah - ch) / 2,
+    width: cw,
+    height: ch
   };
 
 }
