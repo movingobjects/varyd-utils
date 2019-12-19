@@ -40,6 +40,12 @@ export function smootherNorm(val, min, max, doClamp = false) {
 export function map(val, min, max, tmin, tmax, doClamp = false) {
   return lerp(tmin, tmax, norm(val, min, max, doClamp));
 }
+export function smoothMap(val, min, max, tmin, tmax, doClamp = false) {
+  return smoothLerp(tmin, tmax, norm(val, min, max, doClamp));
+}
+export function smootherMap(val, min, max, tmin, tmax, doClamp = false) {
+  return smootherLerp(tmin, tmax, norm(val, min, max, doClamp));
+}
 
 export function uniToBi(val) {
   return map(val, 0, 1, -1, 1);
